@@ -42,7 +42,7 @@ def generate_page(from_path: str, template_path: str, dest_path: str, basepath: 
     title = extract_title(md)
     # Create HTML to inject from template
     full_html = template.replace("{{ Title }}", title).replace("{{ Content }}", str(html))
-    full_html = full_html.replace('"href="/', f'href="{basepath}').replace('src="/', f'src="{basepath}')
+    full_html = full_html.replace('href="/', f'href="{basepath}').replace('src="/', f'src="{basepath}')
     # Write the new HTML page at destination path
     dest_dir = os.path.dirname(dest_path)
     os.makedirs(dest_dir, exist_ok=True)
